@@ -17,10 +17,10 @@
             height="639px"
           >
             <q-carousel-slide class="q-pa-none" :name="1" img-src="/statics/images/image_1.jpg">
-  <div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.68) !important;">
+  <div class="full-height full-width flex flex-center bg-primary" >
               <div class="custom-caption">
-                <div class="text-h2 main_line animation_2">WELCOME TO <span :style="'color:'+theme_color">KUDOS</span></div><br><br><br>
-                <div class="text-h4 animation_1">The Web as I envisaged it, we have not seen it yet. The future<br> is still so much bigger than the past.</div><br><br><br>
+                <div class="text-h2 main_line animation_2" style="color:white;">WELCOME TO Simplserv.</div><br><br><br>
+                <div class="text-h4 animation_1">Services delivered right to your doorstep! </div><br><br><br>
   <div class="animation_2">
   <q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="Login" to="/login"/>
   </div>
@@ -28,23 +28,23 @@
   </div>
             </q-carousel-slide>
             <q-carousel-slide class="q-pa-none" :name="2" img-src="/statics/images/image_2.jpg">
-  <div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.68) !important;">
+  <div class="full-height full-width flex flex-center bg-primary" >
               <div class="custom-caption">
-                <div class="text-h2 main_line animation_2" style="font-size:65px"><span :style="'color:'+theme_color">KUDOS</span> FOR THE BEST</div><br><br><br>
-                <div class="text-h4 animation_1">A man who dares to waste one hour of time has <br>not discovered the value of life.</div><br><br><br>
+                <div class="text-h2 main_line animation_2" style="font-size:65px; color:white;">Simplserv FOR THE BEST</div><br><br><br>
+                <div class="text-h4 animation_1">Where customers meet service providers.</div><br><br><br>
   <div class="animation_2">
-  <q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="READ MORE"/>
+  <q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="Login" to="/login"/>
   </div>
               </div>
   </div>
             </q-carousel-slide>
             <q-carousel-slide class="q-pa-none" :name="3" img-src="/statics/images/image_3.jpg">
-  <div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.68) !important;">
+  <div class="full-height full-width flex flex-center bg-primary" >
               <div class="custom-caption">
-                <div class="text-h2 main_line animation_2" style="font-size:65px">THE PATH OF <span :style="'color:'+theme_color">SUCCESS</span></div><br><br><br>
-                <div class="text-h4 animation_1">We have to stop optimizing for programmers and <br>start optimizing for users.</div><br><br><br>
+                <div class="text-h2 main_line animation_2" style="font-size:65px; color:white">THE PATH OF SUCCESS</div><br><br><br>
+                <div class="text-h4 animation_1">Making people's lives hasslefree everyday!</div><br><br><br>
   <div class="animation_2">
-  <q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="READ MORE"/>
+  <q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="Login" to="/login"/>
   </div>
               </div>
   </div>

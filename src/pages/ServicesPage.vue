@@ -1,6 +1,8 @@
 <template>
     <q-page class="q-pa-md" >
 
+     
+
       <div class="q-pa-md">
     <q-carousel
       arrows
@@ -33,6 +35,19 @@
         </div>
       </q-carousel-slide>
     </q-carousel>
+    <transition appear
+  enter-active-class="animated fadeIn"
+  leave-active-class="animated fadeOut">
+    <q-banner class="bg-grey-3 absolute-top" v-if="val">
+      <template v-slot:avatar>
+        <q-icon name="fa-solid fa-user" color="primary" />
+      </template>
+      <div class="text-h6 ">Signed in successfully!</div>
+      <template v-slot:action>
+        <q-btn flat color="primary" label="Close" @click="val=!val"/>
+      </template>
+    </q-banner>
+    </transition>
   </div>
       <div class="q-pa-md">
         <div class="text-h6 q-pa-md">Search by area</div>
@@ -58,104 +73,26 @@
 
 
 
-<div class="q-pa-md row items-start q-gutter-lg">
-
-<q-card class="my-card cursor-pointer ">
-<q-card-section>
-<q-icon name="fa-solid fa-shopping-cart" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Grocery</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-utensils" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Tiffin</div>
-</q-card-section>
-</q-card>
-
-<q-card class="my-card cursor-pointer" >
-<q-card-section>
-<q-icon name="fa-solid fa-broom" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Maid</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-kitchen-set" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Cook</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-helmet-safety" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Carpenter</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-plug-circle-exclamation" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Electrician</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-faucet-drip" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Plumber</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-screwdriver-wrench" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Vehicle Repair</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-scissors" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Barber</div>
-</q-card-section>
-</q-card>
-<q-card class="my-card cursor-pointer">
-<q-card-section>
-<q-icon name="fa-solid fa-shirt" class="q-pa-lg" size="lg"></q-icon>
-</q-card-section>
-<q-separator></q-separator>
-<q-card-section >
-<div class="text-subtitle2 text-center">Laundry</div>
-</q-card-section>
-</q-card>
-
-</div></div>
+<div v-for="item in types" :key="item.id" class="q-pa-md row inline" >
 
   
-    </q-page>
+
+  <q-card class="my-card cursor-pointer flat q-ma-none " @click="selectType(item.name)">
+<q-card-section>
+<q-icon :name="item.icon" class="q-pa-lg" size="lg"></q-icon>
+</q-card-section>
+<q-separator></q-separator>
+<q-card-section >
+<div class="text-subtitle2 text-center">{{item.name}}</div>
+</q-card-section>
+</q-card>
+
+
+</div>
+</div>
+
+  
+  </q-page>
 
 </template>
 
@@ -173,6 +110,61 @@ import { ref } from 'vue'
             return {
                 
                 area:'',
+                val:true,
+                types:[
+                  {
+                    id:1,
+                    name:"grocery",
+                    icon:"fa-solid fa-shopping-cart"
+                  },
+                  {
+                  id:2,
+                  name:"tiffin",
+                  icon:"fa-solid fa-utensils"
+                  },
+                  {
+                  id:3,
+                  name:"maid",
+                  icon:"fa-solid fa-broom"
+                  },
+                  {
+                  id:4,
+                  name:"cook",
+                  icon:"fa-solid fa-kitchen-set"
+                  },
+                  {
+                  id:5,
+                  name:"carpenter",
+                  icon:"fa-solid fa-helmet-safety"
+                  },
+                  {
+                  id:6,
+                  name:"electrician",
+                  icon:"fa-solid fa-plug-circle-exclamation"
+                  },
+                  {
+                  id:7,
+                  name:"plumber",
+                  icon:"fa-solid fa-faucet-drip"
+                  },
+                  {
+                  id:8,
+                  name:"repair",
+                  icon:"fa-solid fa-screwdriver-wrench"
+                  },
+                  {
+                  id:9,
+                  name:"barber",
+                  icon:"fa-solid fa-scissors"
+                  },
+                  {
+                  id:10,
+                  name:"laundry",
+                  icon:"fa-solid fa-shirt"
+                  },
+
+                
+                ]
             }
         },
         methods: {
@@ -181,7 +173,14 @@ import { ref } from 'vue'
             
             this.$router.push({path:'searchresult', query:{area:this.area}})
 
+          },
+          selectType(type){
+            this.$router.push({path:'searchresult', query:{type:type}})
+
+            
+
           }
+
         },
     }
 </script>
