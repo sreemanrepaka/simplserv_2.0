@@ -3,7 +3,7 @@
 
 
         
-        <q-card class="my-card" >
+        <q-card class="my-card" style="width:260px">
       <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
 
       <q-card-section>
@@ -30,15 +30,13 @@
          {{ result.location }}
         </div>
         <div class="text-caption text-grey">
-         {{ result.address }}
+         click for more details
         </div>
       </q-card-section>
 
       <q-separator />
 
-      <q-card-actions class="text-h6">
-        {{ result.phone }}
-      </q-card-actions>
+      
     </q-card>
         
 

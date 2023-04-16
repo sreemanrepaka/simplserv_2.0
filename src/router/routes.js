@@ -1,6 +1,6 @@
 
 const routes = [
-  { path: '/login', component: () => import('src/pages/LoginPage.vue') },
+
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
@@ -12,10 +12,31 @@ const routes = [
       { path: '/contact', component: () => import('pages/ContactPage.vue') },
       { path: '/searchresult', component: () => import('pages/ResultsPage.vue') },
       
+    ],
+    meta:{
+      requiresAuth: true,
+    }
+  },
+
+  
+
+ 
+  { path: '', component: () => import('pages/HomePage.vue') },
+
+  {
+    path: '/',
+    component: () => import('layouts/Layout2.vue'),
+    children: [
+
+      { path: '/login', component: () => import('src/pages/LoginPage.vue') },
+      { path: '/register', component: () => import('src/pages/RegisterPage.vue') },
+      { path: '/forgotpassword', component: () => import('src/pages/ForgotPassword.vue') },
+      
+      
+      
+      
     ]
   },
-  
-  { path: '', component: () => import('pages/HomePage.vue') },
   
 
   // Always leave this as last one,
@@ -25,5 +46,6 @@ const routes = [
     component: () => import('pages/ErrorNotFound.vue')
   }
 ]
+
 
 export default routes

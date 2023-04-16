@@ -38,7 +38,7 @@
     <transition appear
   enter-active-class="animated fadeIn"
   leave-active-class="animated fadeOut">
-    <q-banner class="bg-grey-3 absolute-top" v-if="val">
+    <q-banner class="bg-grey-3 absolute-top" v-if="val && this.$route.query.val">
       <template v-slot:avatar>
         <q-icon name="fa-solid fa-user" color="primary" />
       </template>
@@ -111,6 +111,7 @@ import { ref } from 'vue'
                 
                 area:'',
                 val:true,
+                //household and maintenance/repair
                 types:[
                   {
                     id:1,
@@ -149,7 +150,7 @@ import { ref } from 'vue'
                   },
                   {
                   id:8,
-                  name:"repair",
+                  name:"vehicle repair",
                   icon:"fa-solid fa-screwdriver-wrench"
                   },
                   {
@@ -162,6 +163,20 @@ import { ref } from 'vue'
                   name:"laundry",
                   icon:"fa-solid fa-shirt"
                   },
+
+                  {id:11,
+                  name:"tailor",
+                  icon:"fa-solid fa-tape"
+                  },
+
+                  {
+                    id:12,
+                    name:"pharmacy",
+                    icon:"fa-solid fa-square-plus"
+                    
+                    
+                  }
+                  
 
                 
                 ]
@@ -197,4 +212,6 @@ import { ref } from 'vue'
 .my-card:hover{
   background-color: rgb(212, 211, 211);
 }
+
+
 </style>

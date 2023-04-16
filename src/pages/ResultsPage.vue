@@ -11,7 +11,7 @@
         <q-separator/>
         <div v-if="results.length>0" class="row justify-center">
             <div class="row inline justify-center " v-for="(result,index) in results" :key="index">
-            <ResultCard class= "q-pa-lg "  :result="result"/>
+            <ResultCard class= "q-pa-lg"  :result="result" @click="showDialog(result)" />
             
             </div>
 
@@ -32,12 +32,12 @@
       </template>
     </q-banner>
         </div>
-        
-            
-
-            
-
-       
+    
+    
+  <q-dialog v-model="showModal" class="my-dialog" transition-show="fade" transition-hide="fade">
+    <details-card :details="details"></details-card>
+    
+  </q-dialog>
 
 
     </q-page>
@@ -45,6 +45,8 @@
 
 <script>
 import ResultCard from 'src/components/ResultCard.vue';
+import DetailsCard from '../components/DetailsCard.vue';
+
     export default {
         name:'ResultsPage',
         data() {
@@ -106,13 +108,16 @@ import ResultCard from 'src/components/ResultCard.vue';
                 rating:4.5,
                 location: 'Sus',
                 phone: 1234567890,
-                address: "parkhe vasti opposite oxford paradise sus"
+                
             },
 
             ],
             area:'',
             type:'',
             results:[],
+            
+            showModal: false,
+            details:{}
 
             }
             
@@ -131,13 +136,24 @@ import ResultCard from 'src/components/ResultCard.vue';
         }
         
         
-        
-       
-        
-        
+        },
+        methods: {
+            openDetails() {
+                this.details=true;
+                
+            },
+
+            showDialog(e) {
+            this.showModal = true;
+            this.details=e;
+            
+            
+            },
+            
         },
         components: {
             ResultCard,
+            DetailsCard,
         },
         
     }
