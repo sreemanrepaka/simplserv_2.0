@@ -1,69 +1,63 @@
-<template>
+
+  <template>
+
     <q-layout view="lHh lpr lFf">
-      
-      <q-page-container>
-        <q-page>
-          
-          <q-carousel
-            
-            v-model="slide"
-            navigation
-            infinite
-            control-color="white"
-            height="639px"
-          >
-            <q-carousel-slide class="q-pa-none" :name="1" >
-  <div class="full-height full-width bg-primary q-pa-xl " >
-
-    <br><br><br><br>
-    
-    <div class="row">
-    <div class="col offset-1" >
-
-      <div class="custom-caption">
-                <div class="text-h2 main_line animation_2 text-weight-bold text-center" style="color:white;">WELCOME TO <span id="animated-text">Simplserv.</span></div><br><br><br>
-                <div class="text-h4 animation_1 text-center" style="color:white">Your one-stop-shop for all your household needs! </div><br><br><br>
-      </div>
-        
-
-  <div class="animation_2 flex flex-center">
-    
-      <q-btn :style="'color:'+ theme_color +'; background: white; width:200px'" label="Login" to="/login"  rounded class="q-ma-md q-pa-sm" />
-      <q-btn :style="'color:'+ theme_color +'; background: white; width:200px'" label="Signup" to="/register"  rounded class="q-pa-sm"/>
-
-  </div>
-      
-    </div>
-    <div class="col"> Pic</div>
-    </div>
-
-
-  
-  </div>
-
- 
-            </q-carousel-slide>
-
-            
-            
-          </q-carousel>
-          <div class="quote">
-            <div class="q-pt-xl full-width full-height flex flex-center" style="background-color: white !important;">
-              <q-card class="my-card q-ma-lg q-pa-md">
-              <q-card-section>
-              <h4 class="text-black text-center">Get things done with ease, <br>Effortlessly find reliable service providers for your everyday needs!
- 
-              </h4>
-
-        
-              </q-card-section>
-              </q-card>
-              
+    <q-page-container>
+    <q-page style="margin-top: -60px">
+      <section class="heroSection bg-primary">
+        <div class="heroSection__content container q-mb-xl">
+          <div class="row full-width q-mb-xl">
+            <div class="col-12 col-md-6 vertical-middle self-center">
+              <h2 class="text-h3 text-white text-weight-medium fredoka">WELCOME TO <span id="animated-text">Simplserv.</span></h2>
+              <h4 class="text-h5 text-white">Your one-stop-shop for all your household needs!</h4>
+              <q-btn
+                class="text-black q-ma-md"
+                unelevated
+                color="white"
+                label="Login"
+                to="/login"
+                
+                
+                
+               
+              />
+              <q-btn
+                class="text-black"
+                unelevated
+                color="white"
+                label="Register"
+                to="/register"
+                
+               
+              />
               
             </div>
+            <div class="col-0 col-md-6">
+              <img
+                :style="($q.screen.md || $q.screen.lg || $q.screen.xl) ? 'width: 550px; max-width: fit-content;' : 'width: 100%; max-width: 100%;'"
+                class="responsive" src="../assets/simplserv_pic.jpeg">
+            </div>
           </div>
-          <div class="text-center text-h4 q-pa-lg text-white bg-primary" >Our Services</div>
-          <div class="row bg-primary" >
+        </div>
+        
+        <div class="waves">
+          
+          <svg class="waves__svg" preserveAspectRatio="none" shape-rendering="auto" viewBox="0 24 150 28"
+               xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+            </defs>
+            <g class="parallax">
+              <use fill="rgba(255,255,255,0.7)" x="48" xlink:href="#gentle-wave" y="0"></use>
+              <use fill="rgba(255,255,255,0.5)" x="48" xlink:href="#gentle-wave" y="3"></use>
+              <use fill="rgba(255,255,255,0.3)" x="48" xlink:href="#gentle-wave" y="5"></use>
+              <use fill="rgba(255,255,255,1)" x="48" xlink:href="#gentle-wave" y="7"></use>
+            </g>
+          </svg>
+        </div>
+      </section>
+      <div class="text-center text-h4 q-pa-lg  " >Our Services</div>
+          <div class="row " >
     
             <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
               
@@ -134,9 +128,6 @@
               </q-card>
             </div>
           </div>
-          
-          
-          
 
           <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;" :style="'border-top: 2px solid '+ theme_color">
              <div class="q-pa-sm q-gutter-sm">
@@ -150,93 +141,61 @@
                        :style="'background:'+ theme_color +'; color: white !important;'" glossy text-color="black" icon="fas fa-heart" />
         </div>
           </q-toolbar>
-  
-        </q-page>
-      </q-page-container>
-    </q-layout>
-  </template>
-  
-  <style ></style>
-  
-  <script>
-
-    import { VueTyper } from 'vue-typer'
-    
-    import { scroll } from 'quasar'
-    const { getScrollTarget, setScrollPosition } = scroll
       
- 
-      export default {
+    </q-page>
+    </q-page-container>
+  </q-layout>
+  </template>
 
+  
+  <script setup>
+  
 
-          data() {
-              return {
-                  slide: 1,
-                      review_slide: 'style',
-                  selected_tab: 't_0',
-                  team_slide: 1,
-                  bg_color: 'bg-primary',
-                  hover: false,
-                  active: false,
-                  theme_color: "primary",
-                  background_style: 'background-color:rgba(0, 163, 82, 0.7);',
-                  about_heading_1: [],
-                  about_heading_2: [],
-                  about_heading_3: [],
-                  about_heading_color_1: '#424242',
-                  about_heading_color_2: '#424242',
-                  about_heading_color_3: '#424242'
-              }
-          },
-          computed: {
-              style() {
-                  return {
-                      width: '340px',
-                      height: '263px',
-                      backgroundImage: `url('https://raw.githubusercontent.com/quasarframework/quasar-ui-qflashcard/dev/demo/src/statics/bgimg.jpg')`, // eslint-disable-line
-                      textAlign: 'center',
-                      boxShadow: '1px 1px 2px #e6e6e6',
-                      display: 'inline-block'
-                  }
-              },
-              team_style() {
-                  return {
-                      width: '260px',
-                      height: '263px',
-                      backgroundImage: `url('https://raw.githubusercontent.com/quasarframework/quasar-ui-qflashcard/dev/demo/src/statics/bgimg.jpg')`, // eslint-disable-line
-                      textAlign: 'center',
-                      boxShadow: '1px 1px 2px #e6e6e6',
-                      display: 'inline-block'
-                  }
-              }
-          },
-          methods: {
-            scrollToElement (id) {
-              let el = document.getElementById(id)
-              const target = getScrollTarget(el)
-              const offset = el.offsetTop + 3
-              const duration = 900
-              setScrollPosition(target, offset, duration)
-            },
-              changeBgColor() {
-                  this.theme_color = this.bg_color;
-                  this.background_style = 'background-color:' + this.bg_color.split(')')[0] + ',0.7)';
-              },
-              hoverOver: function(index) {
-                this['about_heading_color_' + index] = this.theme_color;
-                this['about_heading_' + index] = ['animated', 'bounceIn'];              
-              },
-              hoverOutTimeout: function(index) {
-                this['about_heading_color_' + index] = '#424242';
-                setTimeout(() => {
-                  this['about_heading_' + index] = [];                
-                }, 1000);              
-              },
-          }
-      }
+  const features = [
+    {
+      icon: "fas fa-check",
+      label: "Feature 1"
+    },
+    {
+      icon: "fas fa-check",
+      label: "Feature 2"
+    },
+    {
+      icon: "fas fa-check",
+      label: "Feature 3"
+    }
+  ];
   </script>
   
-  <style  scoped>
+  <style scoped>
+  .heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .waves {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+  }
+  .heroSection__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 1;
+  }
+  .heroSection__title {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
 
   #animated-text {
     position: relative;
@@ -272,5 +231,4 @@
   
   }
 
- 
   </style>

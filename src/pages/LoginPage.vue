@@ -1,7 +1,7 @@
 <template>
   
   <div class="row ">
-    <div class="col-8 offset-2 "><br>
+    <div class="col-md-8 offset-md-2 col-xs-12 col-sm-6 "><br>
       <q-card class="q-ma-xl">
     <div class="row">
       <div class="col-10"></div>
