@@ -65,14 +65,13 @@
   
   
                 <q-card-section>
-                  <q-icon size="110px" name="ballot" :style="'color:'+theme_color"/>
+                  <q-icon size="110px" name="fa-solid fa-house" :style="'color:'+theme_color"/>
                   <div class="text-h6">Household Services</div>
   
                 </q-card-section>
   
                 <q-card-section class="q-pt-none">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt.
+                  Get expert help for all your home cleaning and organizing needs.
                 </q-card-section>
               </q-card>
             </div>
@@ -81,14 +80,13 @@
   
   
                 <q-card-section>
-                  <q-icon size="110px" name="view_comfy" :style="'color:'+theme_color"/>
+                  <q-icon size="110px" name="fa-solid fa-screwdriver-wrench" :style="'color:'+theme_color"/>
                   <div class="text-h6">Maintenance Services</div>
   
                 </q-card-section>
   
                 <q-card-section class="q-pt-none">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt.
+                  Keep your home in top condition with our reliable maintenance services.
                 </q-card-section>
               </q-card>
             </div>
@@ -97,14 +95,13 @@
   
   
                 <q-card-section>
-                  <q-icon size="110px" name="people" :style="'color:'+theme_color"/>
+                  <q-icon size="110px" name="fa-solid fa-utensils" :style="'color:'+theme_color"/>
                   <div class="text-h6">Grocery and Food services</div>
   
                 </q-card-section>
   
                 <q-card-section class="q-pt-none">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt.
+                  Get fresh groceries and delicious meals delivered right to your doorstep.
                 </q-card-section>
               </q-card>
             </div>
@@ -122,8 +119,7 @@
                 </q-card-section>
   
                 <q-card-section class="q-pt-none">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt.
+                  Skilled professionals to handle all your household repairs and maintenance.
                 </q-card-section>
               </q-card>
             </div>
@@ -131,14 +127,15 @@
 
           <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;" :style="'border-top: 2px solid '+ theme_color">
              <div class="q-pa-sm q-gutter-sm">
-          <q-btn round type="a" href=""
+              <q-btn round type="a" href=""
+                       :style="'background:'+ theme_color +'; color: white !important;'" glossy text-color="black" icon="fas fa-home" to="/" />
+          <q-btn round type="a" href="https://twitter.com/SreemanRepaka"
                        :style="'background:'+ theme_color +'; color: white !important;'" icon="fab fa-twitter" />
-          <q-btn round type="a" href=""
+          <q-btn round type="a" href="https://github.com/sreemanrepaka/simplserv_2.0"
                        :style="'background:'+ theme_color +'; color: white !important;'" icon="fab fa-github" />
               <q-btn round type="a" href=""
                        :style="'background:'+ theme_color +'; color: white !important;'" icon="email" />
-          <q-btn round type="a" href=""
-                       :style="'background:'+ theme_color +'; color: white !important;'" glossy text-color="black" icon="fas fa-heart" />
+          
         </div>
           </q-toolbar>
       

@@ -1,10 +1,11 @@
 <template>
-    <q-page>
+
 
 
         
         <q-card class="my-card" style="width:260px">
-      <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
+      <q-img :src="getImage" style="height:200px"/>
+
 
       <q-card-section>
         <q-btn
@@ -27,20 +28,21 @@
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-         {{ result.location }}
+          {{result.service.toUpperCase()}} Services
+          <br>{{ result.location }} 
         </div>
         <div class="text-caption text-grey">
-         click for more details
+         click for more details 
         </div>
       </q-card-section>
 
-      <q-separator />
+      
 
       
     </q-card>
         
 
-    </q-page>
+
 </template>
 
 <script>
@@ -57,6 +59,21 @@
             
 
         },
+        computed: {
+          getImage() {
+            try {
+              return require(`../assets/${this.result.service.toLowerCase()}.jpg`)
+              
+            } catch (error) {
+              return require(`../assets/user.png`)
+              
+              
+              
+            }
+
+
+          }
+        },
         
     }
 </script>
@@ -65,6 +82,7 @@
 
 .my-card:hover{
   background-color:silver ;
+  cursor: pointer;
 }
 
 

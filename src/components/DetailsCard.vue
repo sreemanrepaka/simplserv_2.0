@@ -2,7 +2,7 @@
     <div>
 
       <q-card  >
-  <q-img src="https://placeimg.com/640/480/arch"  />
+  <q-img :src= "getImage" style="width:560px; height: 350px"/>
   <q-card-section class="text-subtitle1">
     <div class="row justify-center">
       <div class="col">
@@ -12,7 +12,7 @@
         <br>
         <q-item-label class="text-tertiary" v-if="details.address">
           <q-icon name="location_on" size="20px" />
-          {{details.address}}
+          {{details.address}} 
         </q-item-label>
         
         <q-item-label class="text-tertiary">
@@ -31,13 +31,13 @@
         </div>
       </div>
     </div>
-    <q-item-label class="text-body1 mt-4">
-      Joe's Grocery Store has been serving the Anytown community for over 20 years, offering a wide selection of fresh produce, meats, and other grocery items.
+    <q-item-label class="text-body1 mt-4" >
+      {{details.name}} has been serving the {{ details.location }} area for a long time now, providing high-quality products and services to their valued customers.
     </q-item-label>
   </q-card-section>
 
   <q-card-actions align="right">
-    <q-btn label="Call" color="primary" class="mr-2" />
+    <q-btn label="Go Back" color="primary" class="mr-2" to="/services"/>
     <q-btn label="Directions" color="primary" @click="openDirections" v-if="details.address"/>
   </q-card-actions>
 </q-card>
@@ -58,8 +58,24 @@
       const address = encodeURIComponent(this.details.address);
       const url = `https://www.google.com/maps/dir/?api=1&destination=${address}`;
       window.open(url, '_blank');
-    }
+    },
+
+
         },
+      computed: {
+        getImage() {
+          try {
+            return require(`../assets/${this.details.service.toLowerCase()}.jpg`)
+            
+          } catch (error) {
+            return require(`../assets/user.png`)
+            
+          }
+        
+        
+      }
+
+      },
 
         
     }

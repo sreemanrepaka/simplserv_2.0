@@ -7,7 +7,7 @@
       <h5 class="text-center text-white">Contact Us
         <br>
         <span
-          class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+          class="text-center text-grey text-h6">Fill the form and we'll get back to you.</span>
       </h5>
     </div>
   </div>

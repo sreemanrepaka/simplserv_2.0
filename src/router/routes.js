@@ -11,6 +11,7 @@ const routes = [
       { path: '/about', component: () => import('pages/AboutPage.vue') },
       { path: '/contact', component: () => import('pages/ContactPage.vue') },
       { path: '/searchresult', component: () => import('pages/ResultsPage.vue') },
+      { path: '/add', component: () => import('src/pages/AddService.vue') },
       
     ],
     meta:{
@@ -31,6 +32,8 @@ const routes = [
       { path: '/login', component: () => import('src/pages/LoginPage.vue') },
       { path: '/register', component: () => import('src/pages/RegisterPage.vue') },
       { path: '/forgotpassword', component: () => import('src/pages/ForgotPassword.vue') },
+      
+      
       
       
       

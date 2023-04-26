@@ -72,12 +72,11 @@
         <div class="text-h6 q-pa-md">Search by service type</div>
 
 
+<div class="flex flex-center">
+  <div v-for="item in types" :key="item.id" class="q-pa-sm row inline " >
 
-<div v-for="item in types" :key="item.id" class="q-pa-md row inline" >
 
-  
-
-  <q-card class="my-card cursor-pointer flat q-ma-none " @click="selectType(item.name)">
+<q-card class="my-card cursor-pointer flat q-ma-none " @click="selectType(item.name.toLowerCase())">
 <q-card-section>
 <q-icon :name="item.icon" class="q-pa-lg" size="lg"></q-icon>
 </q-card-section>
@@ -89,6 +88,9 @@
 
 
 </div>
+</div>
+
+
 </div>
 
   
@@ -115,63 +117,55 @@ import { ref } from 'vue'
                 types:[
                   {
                     id:1,
-                    name:"grocery",
+                    name:"Grocery",
                     icon:"fa-solid fa-shopping-cart"
                   },
                   {
                   id:2,
-                  name:"tiffin",
+                  name:"Tiffin",
                   icon:"fa-solid fa-utensils"
                   },
                   {
                   id:3,
-                  name:"maid",
+                  name:"Maid",
                   icon:"fa-solid fa-broom"
                   },
-                  {
-                  id:4,
-                  name:"cook",
-                  icon:"fa-solid fa-kitchen-set"
-                  },
+                 
                   {
                   id:5,
-                  name:"carpenter",
+                  name:"Carpentry",
                   icon:"fa-solid fa-helmet-safety"
                   },
                   {
                   id:6,
-                  name:"electrician",
+                  name:"Hardware",
                   icon:"fa-solid fa-plug-circle-exclamation"
                   },
-                  {
-                  id:7,
-                  name:"plumber",
-                  icon:"fa-solid fa-faucet-drip"
-                  },
+                  
                   {
                   id:8,
-                  name:"vehicle repair",
+                  name:"Vehicle Repair",
                   icon:"fa-solid fa-screwdriver-wrench"
                   },
                   {
                   id:9,
-                  name:"barber",
+                  name:"Barber",
                   icon:"fa-solid fa-scissors"
                   },
                   {
                   id:10,
-                  name:"laundry",
+                  name:"Laundry",
                   icon:"fa-solid fa-shirt"
                   },
 
                   {id:11,
-                  name:"tailor",
+                  name:"Tailor",
                   icon:"fa-solid fa-tape"
                   },
 
                   {
                     id:12,
-                    name:"pharmacy",
+                    name:"Pharmacy",
                     icon:"fa-solid fa-square-plus"
                     
                     
@@ -186,7 +180,7 @@ import { ref } from 'vue'
           OnSubmit(e) {
             e.preventDefault();
             
-            this.$router.push({path:'searchresult', query:{area:this.area}})
+            this.$router.push({path:'searchresult', query:{area:this.area.toLowerCase()}})
 
           },
           selectType(type){

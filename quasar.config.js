@@ -80,6 +80,8 @@ module.exports = configure(function (ctx) {
       
     },
 
+    
+
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-devServer
     devServer: {
       server: {
@@ -138,6 +140,20 @@ module.exports = configure(function (ctx) {
     },
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-pwa/configuring-pwa
+    // pwa: {
+    //   workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
+    //   workboxOptions: {}, // only for GenerateSW
+
+    //   // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
+    //   // if using workbox in InjectManifest mode
+    //   chainWebpackCustomSW (chain) {
+    //     chain.plugin('eslint-webpack-plugin')
+    //       .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
+    //   },
+      
+
+
+
     pwa: {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
@@ -149,11 +165,30 @@ module.exports = configure(function (ctx) {
         chain.plugin('eslint-webpack-plugin')
           .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
       },
+
+    //   manifest: {
+    //     name: `SimplServ.`,
+    //     short_name: `SimplServ.`,
+    //     description: `A Quasar Project`,
+    //     display: 'standalone',
+    //     orientation: 'portrait',
+    //     background_color: '#ffffff',
+    //     theme_color: '#027be3',
+    //     icons: [
+    //       {
+    //         src: 'icons/simplserv_logo2.jpeg.png',
+    //         sizes: '128x128',
+    //         type: 'image/png'
+    //       },
+         
+    //     ]
+    //   }
+    // },
       
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
+        name: `SimplServ.`,
+        short_name: `SimplServ.`,
         description: `A Quasar Project`,
         display: 'standalone',
         orientation: 'portrait',
