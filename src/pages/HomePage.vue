@@ -8,7 +8,7 @@
         <div class="heroSection__content container q-mb-xl">
           <div class="row full-width q-mb-xl">
             <div class="col-12 col-md-6 vertical-middle self-center">
-              <h2 class="text-h3 text-white text-weight-medium fredoka">WELCOME TO <span id="animated-text">Simplserv.</span></h2>
+              <h2 class="text-h3 text-white text-weight-medium fredoka">WELCOME TO <span id="animated-text">SimplServ.</span></h2>
               <h4 class="text-h5 text-white">Your one-stop-shop for all your household needs!</h4>
               <q-btn
                 class="text-black q-ma-md"
@@ -126,7 +126,7 @@
           </div>
 
           <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;" :style="'border-top: 2px solid '+ theme_color">
-             <div class="q-pa-sm q-gutter-sm">
+             <div class="q-pa-sm q-gutter-xl">
               <q-btn round type="a" href=""
                        :style="'background:'+ theme_color +'; color: white !important;'" glossy text-color="black" icon="fas fa-home" to="/" />
           <q-btn round type="a" href="https://twitter.com/SreemanRepaka"

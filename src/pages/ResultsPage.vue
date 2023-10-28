@@ -9,6 +9,7 @@
         </div>
         
         <q-separator/>
+        <q-spinner v-if="isLoading" class="absolute-center" size="4em"/>
         <div v-if="!no_results" class="row q-ma-lg">
             <div class="row inline justify-center " v-for="(result,index) in results" :key="index">
             <ResultCard class= " q-ma-md"  :result="result" @click="showDialog(result)" />
@@ -63,6 +64,7 @@ import { db } from 'src/firebase';
             showModal: false,
             details:{},
             no_results: false,
+            isLoading: true
 
             }
             
@@ -71,24 +73,25 @@ import { db } from 'src/firebase';
 
        async mounted(){
             const querySnapshot = await getDocs(collection(db, "Services"));
-querySnapshot.forEach((doc) => {
+            this.isLoading = false;
+            querySnapshot.forEach((doc) => {
 
-  let service={
-    service: doc.data().Service,
-    name: doc.data().Name,
-    rating: doc.data().Rating,
-    location: doc.data().Location,
-    phone: doc.data().Phone,
-    address: doc.data().Address
-  };
+            let service={
+                service: doc.data().Service,
+                name: doc.data().Name,
+                rating: doc.data().Rating,
+                location: doc.data().Location,
+                phone: doc.data().Phone,
+                address: doc.data().Address
+            };
 
 
-  
-  this.services.push(service)
+            
+            this.services.push(service)
   
 });
 
-            if(this.$route.query.area){
+        if(this.$route.query.area){
         this.area=this.$route.query.area;
         this.results=this.services.filter((service)=>service.location.toLowerCase()==this.area);
         console.log(this.results)}

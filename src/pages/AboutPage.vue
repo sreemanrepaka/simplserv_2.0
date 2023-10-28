@@ -19,7 +19,7 @@ SimplServ. is a one stop for all the problems faced on a daily basis. Although S
         </div>
       </section> 
 
-        
+
   
         
  
@@ -28,9 +28,9 @@ SimplServ. is a one stop for all the problems faced on a daily basis. Although S
                 <h5 class="text-h3 text-weight-thin fredoka q-ma-none">Our Team</h5> <br><br>
                 <div class="text-h6 text-weight-light">
                   Sreeman Repaka <br> 
-                  Soumyaroop Das <br>
-                  Siddharth Ingle <br>
-                  Siddhanth Mutha <br> <br><br>
+                  Sneh Patel <br>
+                  Sukhmeet Singh Bawa <br>
+                  <br><br>
                 </div>
                
               </div>

@@ -24,7 +24,7 @@
   
       <q-footer >
         <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;" :style="'border-top: 2px solid '+ theme_color">
-             <div class="q-pa-sm q-gutter-sm">
+             <div class="q-pa-sm q-gutter-xl">
               <q-btn round type="a" href=""
                        :style="'background:'+ theme_color +'; color: white !important;'" glossy text-color="black" icon="fas fa-home" to="/" />
           <q-btn round type="a" href="https://twitter.com/SreemanRepaka"
